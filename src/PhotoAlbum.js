@@ -1,5 +1,6 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Photo from "./Photo";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 function PhotoAlbum() {
 
@@ -25,17 +26,35 @@ function PhotoAlbum() {
         {id: 19, imgSrc : "uns19.jpg", content: "Embrace the harmonies, let the music ignite your spirit."},
         {id: 20, imgSrc : "uns20.jpg", content: "A symphony of colors, painting emotions with melodic strokes."}
     ]
- 
+    
+    const [items, setItems] = useState(postList);
+
+    const fetchMoreData = () => {
+        // a fake async api call like which sends
+        // 20 more records in 1.5 secs
+        setTimeout(() => {
+            setItems((prev) => prev.concat(postList))
+        }, 1500);
+      };
     return(
         <div className="container">
-            <div className="albumBox">
-                {postList.map(item => 
-                    <Photo 
-                        imgSrc={`/img/${item.imgSrc}`} 
-                        photoId={item.id} 
-                        content={item.content}
-                    />
-                )}
+            <h1>My Infinity Photo Album</h1>
+            <div className="albumBox" id="scrollableDiv">
+                <InfiniteScroll
+                    dataLength={items.length}
+                    next={fetchMoreData}
+                    hasMore={true}
+                    loader={<div class="loader">Loading...</div>}
+                    scrollableTarget="scrollableDiv"
+                >
+                    {items.map(item => 
+                        <Photo 
+                            imgSrc={`/img/${item.imgSrc}`} 
+                            photoId={item.id} 
+                            content={item.content}
+                        />
+                    )}
+                </InfiniteScroll>
             </div>
         </div>
     )
