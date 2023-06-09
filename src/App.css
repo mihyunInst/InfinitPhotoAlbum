@@ -1,38 +1,52 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  background-color: #1c1b1e;
+  width: 100%;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.albumBox {
+  background-color: rgba(230, 225, 230, 0.5);
+  width: 90%;
+  height: 90%;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding : 30px;
+  box-shadow: #000 5px 5px 5px 3px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow-y: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.photo {
+  width: 300px;
+  height: 250px;
+  background-color: #fffbff;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.photo:hover {
+  box-shadow: rgba(28, 27, 30, 0.5) 5px 5px 5px 5px;
+}
+
+.photo img{
+  width: 100%;
+  
+}
+
+.modalImg {
+  height: 70%;
 }
