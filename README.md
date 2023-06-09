@@ -6,4 +6,4 @@
 - react-infinite-scroll-component : https://www.npmjs.com/package/react-infinite-scroll-component
 - react-modal : https://www.npmjs.com/package/react-modal
 
-<img src="https://github.com/mihyunInst/InfinitPhotoAlbum/assets/118782275/0946b0ae-ae6f-4f70-b93b-39af4b54a810" />
+<img src="https://github.com/mihyunInst/InfinitPhotoAlbum/assets/118782275/eedb3d8f-27d0-4549-81de-05f6fe39ff0b" />
